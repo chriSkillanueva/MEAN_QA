@@ -1,0 +1,15 @@
+<hr>
+<b style="display:inline">{{user}}</b> | <a href = '#!/home'><button>Go Back</button></a> | <a href = '#!/question/{{question._id}}'><button>Go to Question</button></a> | <button ng-click="logout()">Log Out</button>
+<hr>
+<h1>Answer Question</h1>
+<h4>{{question.question}}</h4>
+<h4>{{question.description}}</h4>
+<form ng-submit="answerQuestion()">
+    <label><u>Your Answer:</u> </label><input type="text" ng-model="answer.answer" style="width:250px;"><br>
+    <p style="color:red">{{messages}}</p>
+    <br>
+    <label><u>Supporting Details (optional):</u> </label><input type="text" ng-model="answer.details" style="width:250px;"><br>
+    <input type="hidden" ng-model="answer.name" ng-value="answer.name = user">
+    <br>
+    <input type='submit' value='Submit'>
+</form>

@@ -1,0 +1,15 @@
+<hr>
+<b style="display:inline">{{user}}</b> | <a href = '#!/home'><button>Go Back</button></a> | <a href = '#!/answer/{{question._id}}'><button>Answer this Question</button></a> | <button ng-click="logout()">Log Out</button>
+<hr>
+<h1>View Question</h1>
+<h3>{{question.question}}</h3>
+<h3>{{question.description}}</h3>
+<hr>
+<h3><u>Answers to this Question</u></h3>
+<div ng-repeat="answer in answers | orderBy:'-likes' ">
+    <p><b>{{answer.name}}:</b> {{answer.answer}}</p>
+    <p>{{answer.details}}</p>
+    <p>{{answer.likes}} Likes</p>
+    <button ng-click="like(answer._id)">Like</button>
+    <hr>
+</div>

@@ -1,0 +1,27 @@
+<hr>
+<h3>Hello {{user}}</h3>
+<button ng-click="logout()">Log Out</button>
+<hr>
+<table>
+    <thead>
+        <tr>
+            <th>Question</th>
+            <th>Answers</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="question in questions | filter:filter_name">
+            <td>{{question.question}}</td>
+            <td>{{question.answers.length}}</td>
+            <td>
+                <a style="display:inline" href = '#!/question/{{question._id}}'><button>Show</button></a>
+                <a style="display:inline" href = '#!/answer/{{question._id}}'><button>Answer</button></a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<hr>
+Search Questions: <input type="text" ng-model="filter_name.question">
+<hr>
+<a href = '#!/ask'><button>Ask a Question</button></a>

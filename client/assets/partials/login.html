@@ -1,0 +1,11 @@
+<hr>
+<h3>Please Enter a Name to Continue....</h3>
+    <form name="login_errors" ng-submit="login()">
+        <label><u>Name:</u> </label><input type="text" name="name" ng-model="user.name" required><br>
+        <br>
+        <input type='submit' value='Enter'>
+    </form>
+    <div ng-messages="login_errors.name.$error">
+        <p ng-message="minlength" style="color:red">The Name is too short.</p>
+        <p ng-message="required" style="color:red">Name is required.</p>
+    </div>
